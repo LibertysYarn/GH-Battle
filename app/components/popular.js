@@ -3,10 +3,11 @@ var PropTypes = require('prop-types');
 var api = require('../utils/api');
 
 function SelectLanguage (props) {
-  var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
+  var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python', 'COBOL', 'Groovy', 'SmallTalk', 'C', 'Cpp', 'CSharp', 'Objective-C', 'Perl', 'Assembly'];
+  //TODO change screen render only of Cpp and CSharp to C++ and C#
   return (
     <ul className='languages'>
-      {languages.map(function (lang) {
+      {languages.sort().map(function (lang) {
         return (
           <li
             style={lang === props.selectedLanguage ? {color: '#d0021b'} : null}
